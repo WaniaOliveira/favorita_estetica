@@ -159,14 +159,12 @@ h1,h2,h3,h4{
   box-shadow:0 8px 30px -18px rgba(122,31,67,.3);
 }
 .logo{
-  font-family:var(--fonte-display);
-  font-size:1.55rem;
-  font-style:italic;
-  font-weight:600;
+  display:inline-flex;
+  align-items:center;
   color:#fff;
-  letter-spacing:.02em;
   transition:color .4s ease;
 }
+.logo img{ width:178px; height:74px; object-fit:contain; display:block; }
 .header.scrolled .logo{ color:var(--rosa-profundo-escuro); }
 
 .nav-desktop{
@@ -610,7 +608,8 @@ h1,h2,h3,h4{
   padding-bottom:50px;
   border-bottom:1px solid rgba(255,255,255,.1);
 }
-.footer-brand .logo{ color:#fff; margin-bottom:14px; display:inline-block; }
+.footer-brand .logo{ color:#fff; margin-bottom:14px; padding:4px 8px; background:#fff; }
+.footer-brand .logo img{ width:190px; height:88px; }
 .footer-brand p{ font-size:.88rem; line-height:1.7; max-width:280px; }
 .footer h5{
   color:#fff; font-family:var(--fonte-corpo); font-weight:500;
