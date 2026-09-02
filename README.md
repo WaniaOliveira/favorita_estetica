@@ -45,23 +45,6 @@ python -m http.server 8000
 
 Depois acesse `http://localhost:8000` no navegador.
 
-## Onde alterar cada coisa
-
-| O que alterar | Onde |
-|---|---|
-| Textos gerais (títulos, descrições, seções) | `index.html` |
-| Tratamentos / protocolos / métodos | seções `#protocolos` e `#metodos` em `index.html` |
-| Depoimentos | seção `#depoimentos` em `index.html` (cada `.depo-slide`) |
-| Promoções e QR Code | seção `#promocoes` em `index.html` |
-| Perguntas do FAQ | seção `#faq` em `index.html` (cada `.faq-item`) |
-| Informações de contato (telefone, e-mail, endereço) | seção `#contato` e rodapé em `index.html` |
-| Link do WhatsApp | todos os `href="https://wa.me/55..."` em `index.html` — troque o número e o texto após `?text=` |
-| Instagram | links `href="https://www.instagram.com/..."` |
-| Endereço / mapa | seção `#localizacao` em `index.html` — troque o endereço no link do Google Maps e no `iframe` |
-| Cores da marca | variáveis no topo de `css/style.css` (`:root { --rosa-profundo, --blush, --dourado ... }`) |
-| Fontes | `@import` no topo de `css/style.css` e variáveis `--fonte-display` / `--fonte-corpo` |
-| Logo | trocar o texto/estilo `.logo` em `css/style.css`, ou substituir por `<img>` apontando para `images/logo/logo.png` |
-
 ## Tecnologias utilizadas
 
 - HTML5 semântico
