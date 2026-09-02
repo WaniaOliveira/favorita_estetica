@@ -176,23 +176,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- FORMULÁRIO DE CONTATO (somente visual) ----------
-     Este site é apenas frontend/institucional: não há backend
-     nem banco de dados. O formulário abaixo NÃO envia nem
-     armazena os dados em nenhum servidor. Ao ser enviado, ele
-     apenas monta e abre uma mensagem de WhatsApp já preenchida
-     com os dados digitados, para o contato ser concluído por lá. */
+  /* ---------- FORMULÁRIO DE CONTATO ---------- */
   const contatoForm = document.querySelector('#form-contato');
   const formMsg = document.querySelector('.form-msg');
   contatoForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const nome = contatoForm.nome.value.trim();
-    const telefone = contatoForm.telefone.value.trim();
     const email = contatoForm.email.value.trim();
+    const telefone = contatoForm.telefone.value.trim();
+    const endereco = contatoForm.endereco.value.trim();
     const mensagem = contatoForm.mensagem.value.trim();
 
-    const texto = `Olá! Meu nome é ${nome}.%0AE-mail: ${email}%0ATelefone: ${telefone}%0A%0AMensagem: ${mensagem}`;
-    const whatsappUrl = `https://wa.me/5561993865297?text=${texto}`;
+    const texto = `Olá! Meu nome é ${nome}.\nE-mail: ${email}\nTelefone: ${telefone}\nEndereço: ${endereco}\n\nMensagem: ${mensagem}`;
+    const whatsappUrl = `https://wa.me/5561993865297?text=${encodeURIComponent(texto)}`;
 
     if (formMsg) {
       formMsg.textContent = 'Abrindo o WhatsApp com sua mensagem preenchida...';
