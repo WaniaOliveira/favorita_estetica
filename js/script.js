@@ -179,10 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const nome = contatoForm.nome.value.trim();
     const email = contatoForm.email.value.trim();
     const telefone = contatoForm.telefone.value.trim();
-    const endereco = contatoForm.endereco.value.trim();
     const mensagem = contatoForm.mensagem.value.trim();
 
-    const texto = `Olá! Meu nome é ${nome}.\nE-mail: ${email}\nTelefone: ${telefone}\nEndereço: ${endereco}\n\nMensagem: ${mensagem}`;
+    const texto = `Olá! Meu nome é ${nome}.\nE-mail: ${email}\nTelefone: ${telefone}\n\nMensagem: ${mensagem}`;
     const whatsappUrl = `https://wa.me/5561993865297?text=${encodeURIComponent(texto)}`;
 
     if (formMsg) {
