@@ -147,6 +147,14 @@ document.addEventListener('DOMContentLoaded', () => {
     depoTimer = setInterval(() => goToDepo(depoIndex + 1), 5500);
   }
 
+  /* ---------- MÉTODOS: CARDS INTERATIVOS ---------- */
+  document.querySelectorAll('.metodo-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const isFlipped = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-expanded', String(isFlipped));
+    });
+  });
+
   /* ---------- ANIMAÇÕES AO ROLAR (reveal) ---------- */
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealEls.length) {
@@ -161,19 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => io.observe(el));
   } else {
     revealEls.forEach(el => el.classList.add('in'));
-  }
-
-  /* ---------- BANNER DE COOKIES ---------- */
-  const cookieBanner = document.querySelector('.cookie-banner');
-  const cookieAccept = document.querySelector('.cookie-accept');
-  if (cookieBanner) {
-    if (!localStorage.getItem('favoritaCookiesAceitos')) {
-      setTimeout(() => cookieBanner.classList.add('show'), 1200);
-    }
-    cookieAccept?.addEventListener('click', () => {
-      localStorage.setItem('favoritaCookiesAceitos', 'sim');
-      cookieBanner.classList.remove('show');
-    });
   }
 
   /* ---------- FORMULÁRIO DE CONTATO ---------- */
